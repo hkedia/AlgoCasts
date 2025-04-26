@@ -7,6 +7,16 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+  // Check if the string is equal to its reverse
+  return str === str.split('').reverse().join('');
+  // Alternatively, you can use a for loop to check each character
+  // for (let i = 0; i < str.length / 2; i++) {
+  //   if (str[i] !== str[str.length - 1 - i]) {
+  //     return false;
+  //   }
+  // }
+  // return true;
+}
 
 module.exports = palindrome;
