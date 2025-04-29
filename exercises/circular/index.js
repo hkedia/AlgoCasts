@@ -12,6 +12,24 @@
 //   c.next = b;
 //   circular(l) // true
 
-function circular(list) {}
+function circular(list) {
+  // Use two pointers to traverse the list
+  let slow = list.head;
+  let fast = list.head;
+
+  // Move slow pointer one step and fast pointer two steps
+  while (fast.next && fast.next.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+
+    // If they meet, the list is circular
+    if (slow === fast) {
+      return true;
+    }
+  }
+
+  // If we reach the end of the list, it's not circular
+  return false;
+}
 
 module.exports = circular;
